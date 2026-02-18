@@ -45,4 +45,6 @@ jobs:
         gradle-version: '9.3.1'
     
     - name: Build with Gradle 9.3.1
-      run: gradle build
+      run:  |
+        cd ClockSystem-main
+        gradle build
