@@ -32,11 +32,18 @@ jobs:
           distribution: 'temurin'
       - name: Run PMD
         id: pmd
-        uses: pmd/pmd-github-action@967a81f8b657c87f7c3e96b62301cb1a48efef29
+        uses: pmd/pmd-github-action@v2
         with:
-          rulesets: 'rulesets/java/quickstart.xml'
-          sourcePath: 'src/main/java/org/example/app'
+          rulesets: 'category/java/errorprone.xml'
+          sourcePath: 'ClockSystem-main/app/src/main/java'
           analyzeModifiedFilesOnly: false
+      - name: Publish PMD summary
+        if: always()
+        run: |
+          echo "## PMD static analysis" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Ruleset: category/java/errorprone.xml" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Violations: ${{ steps.pmd.outputs.violations }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- SARIF uploaded to Code Scanning alerts." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
