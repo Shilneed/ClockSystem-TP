@@ -52,3 +52,13 @@ jobs:
       run: |
         cd ClockSystem-main
         gradle build
+
+    - name: Upload test report
+      if: always()
+      uses: actions/upload-artifact@v5
+      with:
+        name: gradle-test-report
+        path: |
+          ClockSystem-main/app/build/reports/tests/test
+          ClockSystem-main/app/build/test-results/test
+        if-no-files-found: warn
