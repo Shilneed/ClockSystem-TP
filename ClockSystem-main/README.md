@@ -1,8 +1,8 @@
 # ClockSystem
 
 [![Java CI with Gradle](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/gradle.yml/badge.svg)](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/gradle.yml)
-
-![PMD](https://github.com/TON_USER/TON_REPO/actions/workflows/pmd.yml/badge.svg)
+[![CodeQL Advanced](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/codeql.yml/badge.svg)](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/codeql.yml)
+[![PMD](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/pmd.yml/badge.svg)](https://github.com/Shilneed/ClockSystem-TP/actions/workflows/pmd.yml)
 
 This is a gradle-based Java project for a Clock with Swing GUI and JUnit5 unit tests. It has been created and used by Tom Mens for educational purposes at the University of Mons.
 
