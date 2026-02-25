@@ -45,6 +45,6 @@ jobs:
           echo "- Violations: ${{ steps.pmd.outputs.violations }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- SARIF uploaded to Code Scanning alerts." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: pmd-report.sarif
